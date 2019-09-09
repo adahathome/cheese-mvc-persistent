@@ -41,7 +41,7 @@ public class CategoryController {
                                        Errors errors, Model model) {
 
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Add Cheese");
+            model.addAttribute("title", "Add Category");
             return "category/add";
         }
 
@@ -49,20 +49,4 @@ public class CategoryController {
         return "redirect:";
     }
 
-  /**  @RequestMapping(value = "remove", method = RequestMethod.GET)
-    public String displayRemoveCheeseForm(Model model) {
-        model.addAttribute("cheeses", cheeseDao.findAll());
-        model.addAttribute("title", "Remove Cheese");
-        return "cheese/remove";
-    }
-
-    @RequestMapping(value = "remove", method = RequestMethod.POST)
-    public String processRemoveCheeseForm(@RequestParam int[] cheeseIds) {
-
-        for (int cheeseId : cheeseIds) {
-            cheeseDao.delete(cheeseId);
-        }
-
-        return "redirect:";
-    }**/
 }
